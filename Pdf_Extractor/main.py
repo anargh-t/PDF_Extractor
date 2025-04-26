@@ -1,8 +1,12 @@
 # main.py
-from pdf_processing import load_pdf, extract_images, extract_text_from_image
-from text_extraction import extract_text
-from table_extraction import extract_tables, convert_table_to_latex
-
+from pdf_processing import (
+    load_pdf,
+    extract_text,
+    extract_images,
+    extract_text_from_image,
+    extract_tables,
+    convert_table_to_latex
+)
 
 def main(pdf_path):
     print("Extracting text...")
@@ -21,7 +25,6 @@ def main(pdf_path):
         "tables": latex_tables,
         "ocr_text": ocr_text
     }
-
 
 if __name__ == "__main__":
     pdf_file = r"C:\Users\anarg\Downloads\doc2.pdf"  # Replace with your PDF file
