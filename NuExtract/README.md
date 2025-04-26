@@ -2,6 +2,7 @@
 
 A powerful tool that uses NuExtract v1.5 to automatically extract structured information from various types of documents, including research papers and resumes.
 
+
 ## Features
 
 - Extract structured information from unstructured text
@@ -9,6 +10,8 @@ A powerful tool that uses NuExtract v1.5 to automatically extract structured inf
 - Web-based interface for easy interaction
 - JSON output format for structured data
 - Real-time analysis
+
+![img.png](..%2Fimages%2Fimg.png)
 
 ## Installation
 
