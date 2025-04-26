@@ -1,59 +1,86 @@
-# NuExtract v1.5 Text Extraction
+# Document Analysis Tool
 
-This project demonstrates how to use **NuExtract v1.5**, an open-source model by NuMind, to extract structured information from unstructured text and output it as JSON. NuExtract is lightweight, multilingual, and optimized for "pure extraction" (no hallucination).
+A powerful tool that uses NuExtract v1.5 to automatically extract structured information from various types of documents, including research papers and resumes.
 
 ## Features
-- Extracts data from text using a predefined JSON template.
-- Runs on CPU (or GPU with sufficient memory).
-- Based on the `numind/NuExtract-v1.5` model from Hugging Face.
 
-## Prerequisites
-- Python 3.8 or higher
-- Required libraries:
-  - `torch` (PyTorch)
-  - `transformers` (Hugging Face)
-- At least 8 GB of RAM (for CPU usage) or a GPU with 4+ GB VRAM (optional).
+- Extract structured information from unstructured text
+- Support for multiple document types (research papers, resumes)
+- Web-based interface for easy interaction
+- JSON output format for structured data
+- Real-time analysis
 
 ## Installation
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/anargh-t/NuExtract.git
-   cd nuextract-demo
-2. Create a virtual environment (optional but recommended):
-    ```bash
-   python -m venv venv
-    source venv/bin/activate  # Linux/Mac
-    venv\Scripts\activate     # Windows
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd document-analysis-tool
+```
+
+2. Create a virtual environment (recommended):
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
 
 3. Install dependencies:
-   ```bash
-   pip install torch transformers
+```bash
+pip install -r requirements.txt
+```
 
 ## Usage
-1. Edit nuextract.py to modify the text and template variables with your own data if desired.
 
-2. Run the script:
-    ```bash
-   python nuextract.py
+1. Start the Flask application:
+```bash
+python app.py
+```
 
-## Notes
-* **CPU Usage:** The script defaults to CPU to avoid GPU memory issues. Change `device = "cuda"` in `main()` if you have a compatible GPU.
+2. Open your web browser and navigate to `http://localhost:5000`
 
-* **Memory:** 'NuExtract v1.5' requires ~7-8 GB of memory. For smaller GPUs, try `numind/NuExtract-v1.5` by updating `model_name`.
+3. Select the document type (Research Paper or Resume)
 
-* **Customization:** Modify the `template` to extract different fields from your text.
+4. Paste your document text into the input area
 
-## Troubleshooting
-* **Memory Error:** If you encounter a `CUDA out of memory error`, ensure `device = "cpu"` or use a smaller model.
+5. Click "Analyze Document" to process the text
 
-* **Slow Performance**: CPU execution is slower than GPU. Be patient during model loading and inference.
+6. View the structured results in the right panel
+
+## Supported Document Types
+
+### Research Papers
+- Title
+- Authors
+- Abstract
+- Keywords
+- Publication details
+- Methodology
+- Results
+- Conclusions
+
+### Resumes
+- Candidate information
+- Contact details
+- Education
+- Experience
+- Skills
+- Certifications
+- Projects
+
+## Technical Details
+
+- Built with Flask for the web interface
+- Uses NuExtract v1.5 for information extraction
+- JSON templates for structured output
+- Bootstrap for responsive design
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
-This project is licensed under the MIT License. The NuExtract model is provided under the MIT License by NuMind.
 
-## Acknowledgments
-* Built with NuExtract v1.5 by NuMind.
-* Powered by Hugging Face Transformers.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 
 
